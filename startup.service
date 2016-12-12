@@ -1,0 +1,14 @@
+[Unit]
+Description=Startup
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python2 /etc/startup.py
+User=root
+Group=root
+RemainAfterExit=true
+KillMode=process
+
+[Install]
+WantedBy=default.target
