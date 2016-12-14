@@ -35,9 +35,7 @@ mv startup.sh /etc/init.d/
 mv startup.service /etc/systemd/system/
 sudo update-rc.d -f startup.sh defaults
 systemctl daemon-reload
-systemctl enable service.status
+systemctl enable startup.service
 sed -i 's/^exit 0/whois $(dig +short myip.opendns.com @resolver1.opendns.com) > \/tmp\/netInfo.tmp\n\nexit 0/' /etc/rc.local
-#sed -i 's/^exit 0/python2 \/etc\/startup.py\n\nexit 0/' /etc/rc.local
-#cp /etc/rc2.d/S04rc.local /etc/rc1.d/
 
 reboot now
